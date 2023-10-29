@@ -19,7 +19,6 @@ const GameScreen = () => {
     // Can pick any color and gamePiece from the FontAwesome library https://icons.expo.fyi/Index
     const [playerOne, setPlayerOne] = useState({ gamePiece: 'close', color: 'cyan', name: 'Player 1' })
     const [playerTwo, setPlayerTwo] = useState({ gamePiece: 'circle-o', color: 'violet', name: 'Player 2' })
-
     const [moveCount, setMoveCount] = useState(0)
 
     // EFFECTS
