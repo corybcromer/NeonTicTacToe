@@ -1,13 +1,16 @@
-import { Dimensions, StyleSheet, Text, TouchableHighlight, View } from 'react-native'
+import { StyleSheet, TouchableHighlight, View } from 'react-native'
 import React from 'react'
 import { FontAwesome } from '@expo/vector-icons';
 
 const GameSquare = (props) => {
 
-  const { index, numColumns, numOfSquares, gamePiece } = props
+  // PROPS
+  const { boardSize, index, numColumns, numOfSquares, onSquarePress, gamePiece, gamePieceColor, isMyTurn } = props
 
-  const size = (Dimensions.get('window').width - 16) / numColumns
+  // CONSTANTS
+  const squareSize = boardSize / numColumns
 
+  // HELPER FUNCTIONS
   const determineBorderStyle = () => {
     // Takes the index of the square, the number of columns, and total num of squares to determine which border to show
     const tempIndex = index + 1
@@ -47,18 +50,20 @@ const GameSquare = (props) => {
 
   return (
     <TouchableHighlight
-      style={[styles.gameSquare, { height: size, width: size }, determineBorderStyle()]}
+      style={[styles.gameSquare, { height: squareSize, width: squareSize }, determineBorderStyle()]}
       activeOpacity={0.1}
       underlayColor="white"
-      onPress={() => console.log('Pressed')}
-      isDisabled={gamePiece !== null}
+      onPress={() => onSquarePress(index)}
+      disabled={(gamePiece !== null) || !isMyTurn}
     >
-      { gamePiece === 'X' ?
-      <FontAwesome name="close" size={size - 8} color="cyan" /> 
-      : gamePiece === 'O' ?
-      <FontAwesome name="circle-o" size={size - 8} color="violet" />
-      : <View/>
-}
+      {gamePiece
+        ? <FontAwesome style={[styles.gamePiece, { textShadowColor: gamePieceColor }]}
+          name={gamePiece}
+          size={squareSize - 8}
+          color={gamePieceColor}
+        />
+        : <View />
+      }
     </TouchableHighlight>
   )
 }
@@ -67,9 +72,17 @@ export default GameSquare
 
 const styles = StyleSheet.create({
   gameSquare: {
+    backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: 'center',
     borderColor: 'white',
+    shadowColor: "white",
+    shadowOpacity: 0.7,
+    shadowRadius: 12,
+  },
+  gamePiece: {
+
+    textShadowRadius: 12,
   },
   topLeftBorder: {
     borderRightWidth: 4,

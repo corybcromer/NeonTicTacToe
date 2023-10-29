@@ -2,52 +2,39 @@ import { Dimensions, FlatList, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import GameSquare from './GameSquare'
 
-const Gameboard = () => {
+const GameBoard = (props) => {
 
-  const numOfSquares = 9
-  const numOfColumns = 3 
-  const dataOfSquare = {gamePiece: null}
-  const initialGameboardData = Array(numOfSquares).fill(dataOfSquare)
-
-  console.log(initialGameboardData)
-
-  const [gameboardData, setGameboardData] = useState(initialGameboardData)
-
+  // PROPS
+  const { style, boardSize, numOfSquares, numOfColumns, gameBoardData, onBoardPress, gamePiece, gamePieceColor, isMyTurn } = props
 
   return (
-    <View style={styles.gameBoard}>
+    <View style={[styles.gameBoard, { height: boardSize, width: boardSize, opacity: isMyTurn ? 1 : .3 }, style]}>
       <FlatList
         style={styles.listContainer}
         contentContainerStyle={styles.listContentContainer}
         numColumns={numOfColumns}
-        columnWrapperStyle={{justifyContent: 'space-between', }}  
         scrollEnabled={false}
-        data={gameboardData}
-        renderItem={({item, index}) => <GameSquare
+        data={gameBoardData}
+        renderItem={({ item, index }) => <GameSquare
+          boardSize={boardSize}
           index={index}
           numColumns={numOfColumns}
           numOfSquares={numOfSquares}
+          onSquarePress={(index) => onBoardPress(index, gamePiece, gamePieceColor)}
           gamePiece={item.gamePiece}
+          gamePieceColor={item.color}
+          isMyTurn={isMyTurn}
         />}
       />
     </View>
   )
 }
 
-export default Gameboard
+export default GameBoard
 
 const styles = StyleSheet.create({
   gameBoard: {
-    width: Dimensions.get('window').width - 16,
-    height: Dimensions.get('window').width - 16,
     alignItems: 'center',
     justifyContent: 'center',
   },
-listContainer: {
-
-},
-listContentContainer: {
-
-
-},
 })

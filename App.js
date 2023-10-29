@@ -1,14 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import Gameboard from './src/components/Gameboard.js';
+import { StyleSheet, View } from 'react-native';
+import * as SplashScreen from 'expo-splash-screen';
+import GameScreen from './src/screens/GameScreen';
+
 
 export default function App() {
+
+
   return (
-    <View style={styles.container}>
+    <View style={styles.container} >
       <StatusBar style="light" />
-      <SafeAreaView style={{flex: 1}}>
-      <Gameboard />
-      </SafeAreaView>
+      <GameScreen />
     </View>
   );
 }
@@ -18,7 +20,16 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor:'black',
+    justifyContent: 'space-evenly',
+    backgroundColor: 'black',
   },
+  title: {
+    fontFamily: 'Neonderthaw',
+    fontSize: 48,
+    color: 'white'
+  },
+  bottomGameBoard: {
+    marginTop: 24,
+
+  }
 });
