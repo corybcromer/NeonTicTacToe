@@ -22,6 +22,7 @@ const GameScreen = () => {
 
     const [moveCount, setMoveCount] = useState(0)
 
+    // EFFECTS
     useEffect(() => {
         // Checks each move if there is a winner or a tie game
         const winner = checkIfWinner(gameBoardData, numOfColumns, playerOne, playerTwo)
@@ -37,6 +38,7 @@ const GameScreen = () => {
 
     }, [gameBoardData])
 
+    // HELPER FUNCTIONS & USER ACTIONS
     const onBoardPress = (index, gamePiece, color) => {
         console.log(index, gamePiece)
         setGameBoardData((prev) => {
