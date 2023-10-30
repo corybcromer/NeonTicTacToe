@@ -32,3 +32,6 @@ Turn order is enforced by enabling/disabling the `onPress` event. The turn is co
 
 #### Winner Logic
 I know that this is a pretty common exercise, and it is even on React's official documentation page as a tutorial. Normally, I like using resources like this; however, I wanted to create my own solution. But, if this was a work scenario, I would happliy learn from and use official resources if it had a better Big O rank. 
+
+#### Time Limit
+I wanted to let the evaluator know that I did go a minute over the 4 hour period to add some comments to my code in order to help the evaluator. Also, I tested cloning my repo after pushing to remote, and found that a file I renamed did not have a correct import path. I fixed this after the time limit. I assume this is acceptable, but wanted to be transparent in order to be fair to other candidates. 
