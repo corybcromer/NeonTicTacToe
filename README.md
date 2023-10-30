@@ -22,7 +22,7 @@ npx expo start
 ## Notes For the Evaluator
 
 #### Scalability
-I wanted to show I could create dynamic and scalable components. The game board that I created can have its size manipulated and scale correclty by changing the `numOfColumns`, `numOfSquares`, and `boardSize`. Therefore, this board could be easily reconfigured for other grid based board games like chess or connect4.
+I wanted to show I could create dynamic and scalable components. The game board that I created can have its size manipulated and scale accordingly by changing the `numOfColumns`, `numOfSquares`, and `boardSize`. Therefore, this board could be easily reconfigured for other grid based board games like chess or connect4.
 
 #### Customization
 I also wanted to add some fun customization. Each user could change the icon and color in the `playerOne` and `playerTwo` states. I didn't have time, but I made it so that you could add screens or modals that would allow the user to make these selections before the game. The icon could accept any string from the list of FontAwesome icons available in the [Expo Icon Library](https://icons.expo.fyi/Index).
