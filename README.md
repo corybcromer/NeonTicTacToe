@@ -1,6 +1,6 @@
 # Neon Tic-Tac-Toe
 
-This is a simple tic-tac-toe game created for the Bible Project's coding challenge.
+This is a simple tic-tac-toe game created for the Bible Project's coding challenge. 👏👍🏆
 
 ## Getting Started
 
