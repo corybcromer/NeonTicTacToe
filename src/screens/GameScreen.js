@@ -1,6 +1,6 @@
 import { Alert, Dimensions, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { useEffect, useState } from 'react';
-import GameBoard from '../components/GameBoard';
+import GameBoard from '../components/Gameboard.js';
 import { checkIfWinner } from '../utils/HelperFunctions';
 
 const GameScreen = () => {
