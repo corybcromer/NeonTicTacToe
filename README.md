@@ -31,4 +31,4 @@ I also wanted to add some fun customization. Each user could change the icon and
 Turn order is enforced by enabling/disabling the `onPress` event. The turn is communicated to the user through lowering the opacitiy of the board for the player whose turn it is not. 
 
 #### Winner Logic
-I know that this is a pretty common exercise, and it is even on React's official documentation page as a tutorial. Normally, I like using resources like this; however, I wanted to create my own solution. However, if this was work scenario I would happliy learn from and use someone elses code if it had a better Big O rank. 
+I know that this is a pretty common exercise, and it is even on React's official documentation page as a tutorial. Normally, I like using resources like this; however, I wanted to create my own solution. However, if this was a work scenario I would happliy learn from and use someone elses code if it had a better Big O rank. 
